@@ -1,0 +1,85 @@
+/* Hammy2go – Webseite. Farben wie im Spiel (src/ui/theme.ts). Keine externen Schriften. */
+:root {
+  --bg: #fbf0dc;
+  --panel: #fff8ec;
+  --border: #d9b98a;
+  --accent: #d9822b;
+  --accent-dark: #a65e1e;
+  --green: #56ac12;
+  --green-dark: #3e8a0c;
+  --text: #4a3524;
+  --text-soft: #8a6f4d;
+  --round: ui-rounded, "SF Pro Rounded", "Hiragino Maru Gothic ProN", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.55 var(--sans); }
+a { color: var(--accent-dark); }
+img { max-width: 100%; display: block; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+h1, h2, h3 { font-family: var(--round); line-height: 1.2; margin: 0 0 12px; }
+h2 { font-size: clamp(26px, 4vw, 34px); text-align: center; margin-bottom: 24px; }
+section { padding: 56px 0; }
+
+/* Kopfleiste */
+.top { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; }
+.brand { display: flex; align-items: center; gap: 10px; font: 800 20px var(--round); color: var(--text); text-decoration: none; }
+.brand img { width: 36px; height: 36px; border-radius: 9px; }
+.lang a { font-weight: 700; text-decoration: none; padding: 4px 8px; border-radius: 8px; }
+.lang a[aria-current="true"] { background: var(--panel); border: 1.5px solid var(--border); color: var(--text); }
+
+/* Start */
+.hero { text-align: center; padding: 24px 0 48px; }
+.hero .logo { width: min(300px, 70vw); margin: 0 auto 18px; border-radius: 36px; box-shadow: 0 14px 40px rgba(74, 53, 36, 0.25); }
+.hero h1 { font-size: clamp(30px, 5.5vw, 48px); }
+.hero p.lead { font-size: clamp(18px, 2.4vw, 21px); color: var(--text-soft); max-width: 640px; margin: 0 auto 26px; }
+.stores { display: flex; flex-wrap: wrap; gap: 16px 20px; justify-content: center; align-items: flex-start; }
+.badge { display: inline-flex; flex-direction: column; align-items: center; gap: 6px; text-decoration: none; }
+.badge img { height: 54px; width: auto; border-radius: 9px; }
+.badge.highlight img { box-shadow: 0 0 0 4px rgba(86, 172, 18, 0.5); }
+.soon-tag { font: 700 13px var(--round); color: var(--text-soft); }
+.badge.soon { flex-basis: 100%; }
+.badge.soon .soon-tag { background: var(--panel); border: 1.5px solid var(--border); border-radius: 99px; padding: 6px 14px; }
+.badge.soon.highlight .soon-tag { border-color: var(--green); }
+.price { margin-top: 14px; font-size: 14px; color: var(--text-soft); }
+
+/* Screenshots */
+.shots { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 16px 20px; margin: 0 -16px; }
+.shots img { width: 230px; flex: 0 0 auto; scroll-snap-align: center; border-radius: 26px; border: 6px solid #2a2a2a;
+  box-shadow: 0 10px 28px rgba(74, 53, 36, 0.25); background: #2a2a2a; }
+@media (min-width: 1100px) { .shots { justify-content: center; overflow: visible; } .shots img { width: 160px; } }
+
+/* Kacheln */
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.tile { background: var(--panel); border: 1.5px solid var(--border); border-radius: 18px; padding: 20px; }
+.tile .em { font-size: 34px; line-height: 1; margin-bottom: 10px; }
+.tile h3 { font-size: 20px; color: var(--accent-dark); }
+.tile p { margin: 0; }
+
+/* So wird gespielt */
+.howto { background: var(--panel); border-top: 1.5px solid var(--border); border-bottom: 1.5px solid var(--border); }
+.steps { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+.step { display: flex; gap: 12px; align-items: flex-start; }
+.step .em { font-size: 30px; }
+.step b { display: block; font: 800 18px var(--round); }
+.note { text-align: center; margin-top: 22px; color: var(--text-soft); }
+
+/* Jahreszeiten */
+.seasons { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.season { text-align: center; background: var(--panel); border: 1.5px solid var(--border); border-radius: 16px; padding: 16px 10px; position: relative; }
+.season .em { font-size: 36px; }
+.season b { display: block; font-family: var(--round); }
+.season.now { border-color: var(--green); box-shadow: 0 0 0 3px rgba(86, 172, 18, 0.35); }
+.season .now-tag { display: none; position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--green);
+  color: #fff; font: 800 12px var(--round); padding: 2px 10px; border-radius: 99px; }
+.season.now .now-tag { display: block; }
+
+/* Fragen */
+details { background: var(--panel); border: 1.5px solid var(--border); border-radius: 14px; padding: 14px 18px; margin-bottom: 10px; }
+summary { cursor: pointer; font: 800 18px var(--round); }
+details p { margin: 10px 0 0; }
+
+/* Fuß */
+footer { padding: 30px 0 40px; text-align: center; color: var(--text-soft); font-size: 14px; }
+footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin-bottom: 10px; }
