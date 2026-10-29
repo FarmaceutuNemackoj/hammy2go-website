@@ -23,14 +23,14 @@ h2 { font-size: clamp(26px, 4vw, 34px); text-align: center; margin-bottom: 24px;
 section { padding: 56px 0; }
 
 /* Kopfleiste */
-.top { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; }
+.top { display: flex; justify-content: space-between; align-items: center; padding-top: 14px; padding-bottom: 14px; }
 .brand { display: flex; align-items: center; gap: 10px; font: 800 20px var(--round); color: var(--text); text-decoration: none; }
 .brand img { width: 36px; height: 36px; border-radius: 9px; }
 .lang a { font-weight: 700; text-decoration: none; padding: 4px 8px; border-radius: 8px; }
 .lang a[aria-current="true"] { background: var(--panel); border: 1.5px solid var(--border); color: var(--text); }
 
 /* Start */
-.hero { text-align: center; padding: 24px 0 48px; }
+.hero { text-align: center; padding-top: 24px; padding-bottom: 48px; }
 .hero .logo { width: min(300px, 70vw); margin: 0 auto 18px; border-radius: 36px; box-shadow: 0 14px 40px rgba(74, 53, 36, 0.25); }
 .hero h1 { font-size: clamp(30px, 5.5vw, 48px); }
 .hero p.lead { font-size: clamp(18px, 2.4vw, 21px); color: var(--text-soft); max-width: 640px; margin: 0 auto 26px; }
@@ -82,6 +82,23 @@ section { padding: 56px 0; }
 details { background: var(--panel); border: 1.5px solid var(--border); border-radius: 14px; padding: 14px 18px; margin-bottom: 10px; }
 summary { cursor: pointer; font: 800 18px var(--round); }
 details p { margin: 10px 0 0; }
+
+/* Presse */
+.press .hero { padding-bottom: 8px; }
+.press section { padding-top: 36px; padding-bottom: 36px; }
+.facts { display: grid; grid-template-columns: max-content 1fr; gap: 8px 20px; max-width: 760px; margin: 0 auto;
+  background: var(--panel); border: 1.5px solid var(--border); border-radius: 18px; padding: 20px 24px; }
+.facts dt { font: 800 16px var(--round); color: var(--accent-dark); }
+.facts dd { margin: 0; }
+@media (max-width: 560px) { .facts { grid-template-columns: 1fr; gap: 2px; } .facts dd { margin-bottom: 10px; } }
+.press-text p { max-width: 760px; margin: 0 auto 14px; }
+.press-text h2 + p { margin-top: -6px; }
+.press-text p + h2 { margin-top: 36px; }
+.downloads { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.dl { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; text-decoration: none; color: var(--text);
+  background: var(--panel); border: 1.5px solid var(--border); border-radius: 16px; padding: 12px; font-size: 14px; }
+.dl img { height: 140px; width: auto; max-width: 100%; object-fit: contain; border-radius: 10px; margin-bottom: 6px; }
+.dl small { color: var(--text-soft); }
 
 /* Fuß */
 footer { padding: 30px 0 40px; text-align: center; color: var(--text-soft); font-size: 14px; }
